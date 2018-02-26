@@ -1,0 +1,8 @@
+#!/bin/bash
+i=1
+
+while test $i -le 5
+do
+    echo "jumma chumma de de $i"
+    i=$(( ++i ))
+done

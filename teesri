@@ -1,0 +1,12 @@
+#!/bin/bash
+#mind your spaces
+echo $((1 + 2))
+expr 1 + 3
+expr 4 - 5
+expr 6 / 2
+expr 3 * 4
+expr 4 \* 4
+var=`expr 10 % 4`
+
+echo $var
+

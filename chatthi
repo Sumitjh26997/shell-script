@@ -1,0 +1,19 @@
+#!/bin/bash
+#HI guys 
+read -p "Kuch likho :" var
+
+case $var in
+
+9211420420)
+    echo "Rose"
+    ;;
+
+Inky)
+    echo "Phone no : 666666666"
+    ;;
+
+*)
+    echo "Mera Pehla Pyaar : Sasha"
+    ;;
+
+esac
