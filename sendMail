@@ -1,0 +1,13 @@
+#!/bin/bash
+
+
+RECIPIENT_EMAIL=$1
+SENDER_EMAIL="coolshikhs97@gmail.com"
+SENDER_PASSWORD=$password
+
+# $password - exported as an environment variable
+
+
+curl --url 'smtps://smtp.gmail.com:465' --ssl-reqd \
+  --mail-from "$SENDER_EMAIL" --mail-rcpt "$RECIPIENT_EMAIL" \
+  --upload-file mail.txt --user "$SENDER_EMAIL:$SENDER_PASSWORD" --insecure
