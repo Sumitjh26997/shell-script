@@ -2,12 +2,26 @@
 
 
 RECIPIENT_EMAIL=$1
+RECIPIENT_NAME=$2
+SENDER_NAME="Shikhar Bhatt"
 SENDER_EMAIL="coolshikhs97@gmail.com"
 SENDER_PASSWORD=$password
 
 # $password - exported as an environment variable
 
+createMail(){
+  echo -e "From : \"$1\" <$2>" > mail.txt
+	echo -e "To : \"$3\" <$4>" >> mail.txt
+  echo " " >> mail.txt
+	echo "Subject : MCUG wishes u a happy valentine's day" >> mail.txt
+	echo " " >> mail.txt
+  echo "Hello $3" >> mail.txt
+	echo "Will you be my valentine?" >> mail.txt
+	echo "Bye" >> mail.txt
+	return
+}
 
+createMail "$SENDER_NAME" $SENDER_EMAIL "$RECIPIENT_NAME" $RECIPIENT_EMAIL
 curl --url 'smtps://smtp.gmail.com:465' --ssl-reqd \
   --mail-from "$SENDER_EMAIL" --mail-rcpt "$RECIPIENT_EMAIL" \
   --upload-file mail.txt --user "$SENDER_EMAIL:$SENDER_PASSWORD" --insecure
